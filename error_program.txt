@@ -1,0 +1,13 @@
+#-Syntax Error: INCORRECT SYNTAX AT: get_bool::((arg0)?(, )||(, ););-#
+print <- "This should print a Syntax Error on function get_bool:\n";
+run print;
+
+get_bool :: (
+	(arg0 ? (
+		return <- true;
+	) || (
+		return <- false;
+	);
+);
+
+

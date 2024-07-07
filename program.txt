@@ -1,0 +1,175 @@
+#-To show you don't need spaces-#
+print<-"num1:\n";
+runprint;
+input<-args0;
+runinput;
+int<-input;
+runint;
+num1<-int;
+
+#- Numerical calculations -#
+print <- "num2:\n";
+run print;
+input <- args0;
+run input;
+int <- input;
+run int;
+num2 <- int;
+(num1 > num2) ? (
+	max <- num1;
+) || (
+	max <- num2;
+);
+
+sum <- (num1 + num2);
+
+(num1 > num2) ? (
+	difference <- (num1 - num2);
+) || (
+	difference <- (num2 - num1);
+);
+
+product <- (num1 * num2);
+
+#- Function to calculate GCD -#
+gcd :: (
+	(arg0 > arg1) ? (
+		a <- arg0;
+        b <- arg1;
+	) || (
+		a <- arg1;
+		b <- arg0;
+	); 
+	
+	(b ~= 0) @ (
+		temp <- a;
+		a <- b;
+		b <- (temp mod b);
+	);
+	
+	return <- a;
+);
+arg0 <- num1;
+arg1 <- num2;
+gcd <- args2;
+run gcd;
+gcd_result <- gcd;
+
+#- LCM using GCD -#
+lcm_result <- ((num1 * num2) div gcd_result);
+
+#- Output results -#
+print <- ("Max =\s"+"{max}");
+run print;
+
+print <- ("Sum =\s" + "{sum}");
+run print;
+
+print <- ("Difference =\s" + "{difference}");
+run print;
+
+print <- ("Product =\s" + "{product}");
+run print;
+
+print <- ("GCD =\s" + "{gcd_result}");
+run print;
+
+print <- ("LCM =\s" + "{lcm_result}");
+run print;
+
+#- Boolean Operators -#
+
+get_bool :: (
+	(arg0 & true) ? (
+		return <- true;
+	) || (
+		return <- false;
+	); 
+);
+
+print <- "This should print True:\n";
+run print;
+get_bool <- true;
+run get_bool;
+print <- get_bool;
+run print;
+
+print <- "This should print False:\n";
+run print;
+get_bool <- false;
+run get_bool;
+print <- get_bool;
+run print;
+
+#-Test boolean operators-#
+print <- "AND Test, should print False:\n";
+run print;
+
+and_test <- (true & false);
+print <- and_test;
+run print;
+
+print <- "OR Test, should print True:\n";
+run print;
+
+or_test <- (true | false);
+print <- or_test;
+run print;
+
+#- Nested conditionals -#
+x <- true;
+print <- "Should print hello\n";
+run print;
+(true & true) ? (
+	(true & false) ? (
+		pass;
+	) || (
+		eval <- "hello";
+	);
+) || (
+	pass;
+);
+print <- eval;
+run print;
+
+print <- "Guess number:\n";
+run print;
+input <- args0;
+run input;
+int <- input;
+run int;
+guess <- int;
+
+(guess = 2) ? (
+	result <- "You guessed number 2:\n";
+) || (
+	(guess < 2) ? (
+		result <- "You guessed too low:\n";
+	) || (
+		result <- "You guessed too high:\n";
+	);
+);
+print <- result;
+run print;
+
+#-Loop to print 0-5-#
+print <- "input a number of times to iterate in a loop:\n";
+run print;
+input <- args0;
+run input;
+inp <- input;
+print <- (("Should print\s" + "{inp}") + "\n");
+run print;
+int <- inp;
+run int;
+num <- int;
+i <- 0;
+print <- "increment\n";
+(i < num) @ (
+	run print;
+	i <- (i + 1);
+);
+print <- i;
+run print;
+
+

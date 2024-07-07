@@ -1,2 +1,1 @@
-# Languages
-A project for my Comparative Programming Languages class.
+# 372---Language-Project

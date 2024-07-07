@@ -1,0 +1,16 @@
+# Introducing syntax errors:
+i <- (0;
+run apple;agja;g
+
+
+# Original provided code with an introduced syntax error
+print <- "This should print a Syntax Error due to an unexpected token in the return statement:\n";
+run print; # 'run' is not a valid command in most programming languages
+
+calculate_result :: ( # Unclear function definition syntax, likely invalid
+	((arg0 mod 2) = 0) ? ( # Improper use of assignment (=) instead of equality (==)
+		return <- "even";
+	) || (
+		return <- "odd";
+	);)
+);

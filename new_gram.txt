@@ -1,0 +1,13 @@
+codeBlock ::= <varAssign> <;> | <funAssign> <;> | <conditional> <;> | <loop> <;> | <funCall> <;> | <pass> <;> | <codeBlock> <codeBlock>
+varAssign ::= <var> <<-> <var> | <var> <<-> <num> | <var> <<-> <string> | <var> <<-> <boolVal>
+funCall ::= <run> <var>
+funAssign ::= <var> <::> <(> <codeBlock> <)>
+conditional ::= <boolVal> <?> <(> <codeBlock> <)> <||> <(> <codeBlock> <)>
+loop ::= <boolVal> <@> <(> <codeBlock> <)>
+boolVal ::= <(> <boolVal> <logicOp> <boolVal> <)> | <(> <boolVal> <logicOp> <var> <)> | <(> <var> <logicOp> <boolVal> <)> | <(> <var> <logicOp> <var> <)> | <(> <string> <cmpOp> <string> <)> | <(> <string> <cmpOp> <var> <)> | <(> <var> <cmpOp> <string> <)> | <(> <num> <cmpOp> <num> <)> | <(> <num> <cmpOp> <var> <)> | <(> <var> <cmpOp> <num> <)> | <(> <var> <cmpOp> <var> <)> | <true> | <false>
+logicOp ::= <&> | <|> | <xor>
+cmpOp ::= <<> | <<=> | <=> | <~=> | <>=> | <>>
+arithOp ::= <+> | <-> | <*> | <^> | </> | <div> | <mod>
+var ::= regex([abc...]*)
+string ::= <(> <string> <+> <string> <)> | *or anything enclosed in quotes*
+num ::= <(> <num> <arithOp> <num> <)> | <(> <var> <arithOp> <num> <)> | <(> <num> <arithOp> <var> <)> | <(> <var> <arithOp> <var> <)> | *or a literal number (int/float)*

@@ -1,0 +1,14 @@
+#-Syntax Error: MISSING SEMICOLON-#
+print <- "This should print a Syntax Error on missing semi colon:\n";
+run print;
+print_values :: (
+	(arg0 & true) ? (
+		(arg0 = 2) ? (
+			return <- "hi"
+		) || (
+			return <- arg
+		)
+	) || (
+		return <- false;
+	);
+);
